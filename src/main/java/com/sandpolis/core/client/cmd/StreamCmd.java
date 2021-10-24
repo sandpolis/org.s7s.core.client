@@ -11,9 +11,9 @@ package com.sandpolis.core.client.cmd;
 
 import java.util.concurrent.CompletionStage;
 
-import com.sandpolis.core.foundation.Result.Outcome;
 import com.sandpolis.core.net.cmdlet.Cmdlet;
-import com.sandpolis.core.net.msg.MsgStream.RQ_StreamStop;
+import com.sandpolis.core.net.msg.MsgStream.RQ_StopStream;
+import com.sandpolis.core.net.msg.MsgStream.RS_StopStream;
 
 /**
  * An API for interacting with streams on the server.
@@ -29,8 +29,8 @@ public class StreamCmd extends Cmdlet<StreamCmd> {
 	 * @param streamID The ID of the stream to stop
 	 * @return An asynchronous {@link CompletionStage}
 	 */
-	public CompletionStage<Outcome> stop(int streamID) {
-		return request(Outcome.class, RQ_StreamStop.newBuilder().setId(streamID));
+	public CompletionStage<RS_StopStream> stop(int streamID) {
+		return request(RS_StopStream.class, RQ_StopStream.newBuilder().setId(streamID));
 	}
 
 	/**

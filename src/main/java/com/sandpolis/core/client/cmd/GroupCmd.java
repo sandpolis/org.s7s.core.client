@@ -9,9 +9,6 @@
 //============================================================================//
 package com.sandpolis.core.client.cmd;
 
-import static com.sandpolis.core.clientserver.msg.MsgGroup.RQ_GroupOperation.GroupOperation.GROUP_CREATE;
-import static com.sandpolis.core.clientserver.msg.MsgGroup.RQ_GroupOperation.GroupOperation.GROUP_DELETE;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -22,10 +19,12 @@ import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
 import javax.crypto.KeyGenerator;
 
-import com.sandpolis.core.foundation.Result.Outcome;
+import com.sandpolis.core.clientserver.msg.MsgGroup.RQ_CreateGroup;
+import com.sandpolis.core.clientserver.msg.MsgGroup.RQ_DeleteGroup;
+import com.sandpolis.core.clientserver.msg.MsgGroup.RS_CreateGroup;
+import com.sandpolis.core.clientserver.msg.MsgGroup.RS_DeleteGroup;
 import com.sandpolis.core.instance.Group.GroupConfig;
 import com.sandpolis.core.net.cmdlet.Cmdlet;
-import com.sandpolis.core.clientserver.msg.MsgGroup.RQ_GroupOperation;
 
 /**
  * An API for interacting with authentication groups on the server.
@@ -41,16 +40,15 @@ public final class GroupCmd extends Cmdlet<GroupCmd> {
 	 * @param name The group name
 	 * @return An asynchronous {@link CompletionStage}
 	 */
-	public CompletionStage<Outcome> create(GroupConfig config) {
-		return request(Outcome.class, RQ_GroupOperation.newBuilder().setOperation(GROUP_CREATE).addGroupConfig(config));
+	public CompletionStage<RS_CreateGroup> create(GroupConfig config) {
+		return request(RS_CreateGroup.class, RQ_CreateGroup.newBuilder());
 	}
 
-	public CompletionStage<Outcome> remove(String id) {
-		return request(Outcome.class, RQ_GroupOperation.newBuilder().setOperation(GROUP_DELETE)
-				.addGroupConfig(GroupConfig.newBuilder().setId(id)));
+	public CompletionStage<RS_DeleteGroup> remove(String id) {
+		return request(RS_DeleteGroup.class, RQ_DeleteGroup.newBuilder());
 	}
 
-	public CompletionStage<Outcome> exportToFile(File group, String groupId, String password) throws Exception {
+	public CompletionStage<?> exportToFile(File group, String groupId, String password) throws Exception {
 		KeyGenerator keyGen = KeyGenerator.getInstance("AES");
 		keyGen.init(new SecureRandom(password.getBytes()));
 
@@ -61,7 +59,7 @@ public final class GroupCmd extends Cmdlet<GroupCmd> {
 		return null;
 	}
 
-	public CompletionStage<Outcome> importFromFile(File group, String password) throws Exception {
+	public CompletionStage<?> importFromFile(File group, String password) throws Exception {
 		KeyGenerator keyGen = KeyGenerator.getInstance("AES");
 		keyGen.init(new SecureRandom(password.getBytes()));
 

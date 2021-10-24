@@ -15,9 +15,9 @@ import java.util.Objects;
 import java.util.concurrent.CompletionStage;
 
 import com.google.common.base.Charsets;
-import com.sandpolis.core.foundation.Result.Outcome;
-import com.sandpolis.core.net.cmdlet.Cmdlet;
 import com.sandpolis.core.clientserver.msg.MsgLogin.RQ_Login;
+import com.sandpolis.core.clientserver.msg.MsgLogin.RS_Login;
+import com.sandpolis.core.net.cmdlet.Cmdlet;
 
 /**
  * An API for logging into and out of the server.
@@ -34,11 +34,11 @@ public final class LoginCmd extends Cmdlet<LoginCmd> {
 	 * @param pass The user's plaintext password
 	 * @return An asynchronous {@link CompletionStage}
 	 */
-	public CompletionStage<Outcome> login(String user, String pass) {
+	public CompletionStage<RS_Login> login(String user, String pass) {
 		Objects.requireNonNull(user);
 		Objects.requireNonNull(pass);
 
-		return request(Outcome.class, RQ_Login.newBuilder().setUsername(user)
+		return request(RS_Login.class, RQ_Login.newBuilder().setUsername(user)
 				// Compute a preliminary hash before PBKDF2 is applied server-side
 				.setPassword(sha512().hashString(pass, Charsets.UTF_8).toString()));
 	}
