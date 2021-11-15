@@ -15,8 +15,8 @@ import java.util.Objects;
 import java.util.concurrent.CompletionStage;
 
 import com.google.common.base.Charsets;
-import com.sandpolis.core.clientserver.msg.MsgLogin.RQ_Login;
-import com.sandpolis.core.clientserver.msg.MsgLogin.RS_Login;
+import com.sandpolis.core.clientserver.Messages.RQ_Login;
+import com.sandpolis.core.clientserver.Messages.RS_Login;
 import com.sandpolis.core.net.cmdlet.Cmdlet;
 
 /**

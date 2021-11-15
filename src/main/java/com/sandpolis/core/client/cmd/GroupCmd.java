@@ -19,10 +19,10 @@ import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
 import javax.crypto.KeyGenerator;
 
-import com.sandpolis.core.clientserver.msg.MsgGroup.RQ_CreateGroup;
-import com.sandpolis.core.clientserver.msg.MsgGroup.RQ_DeleteGroup;
-import com.sandpolis.core.clientserver.msg.MsgGroup.RS_CreateGroup;
-import com.sandpolis.core.clientserver.msg.MsgGroup.RS_DeleteGroup;
+import com.sandpolis.core.clientserver.Messages.RQ_CreateGroup;
+import com.sandpolis.core.clientserver.Messages.RQ_DeleteGroup;
+import com.sandpolis.core.clientserver.Messages.RS_CreateGroup;
+import com.sandpolis.core.clientserver.Messages.RS_DeleteGroup;
 import com.sandpolis.core.instance.Group.GroupConfig;
 import com.sandpolis.core.net.cmdlet.Cmdlet;
 

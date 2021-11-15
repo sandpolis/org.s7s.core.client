@@ -12,8 +12,8 @@ package com.sandpolis.core.client.cmd;
 import java.util.concurrent.CompletionStage;
 
 import com.sandpolis.core.net.cmdlet.Cmdlet;
-import com.sandpolis.core.net.msg.MsgStream.RQ_StopStream;
-import com.sandpolis.core.net.msg.MsgStream.RS_StopStream;
+import com.sandpolis.core.net.Messages.RQ_StopStream;
+import com.sandpolis.core.net.Messages.RS_StopStream;
 
 /**
  * An API for interacting with streams on the server.

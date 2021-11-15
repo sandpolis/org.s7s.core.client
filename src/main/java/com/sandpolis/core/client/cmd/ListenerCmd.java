@@ -11,10 +11,10 @@ package com.sandpolis.core.client.cmd;
 
 import java.util.concurrent.CompletionStage;
 
-import com.sandpolis.core.clientserver.msg.MsgListener.RQ_CreateListener;
-import com.sandpolis.core.clientserver.msg.MsgListener.RQ_DeleteListener;
-import com.sandpolis.core.clientserver.msg.MsgListener.RS_CreateListener;
-import com.sandpolis.core.clientserver.msg.MsgListener.RS_DeleteListener;
+import com.sandpolis.core.clientserver.Messages.RQ_CreateListener;
+import com.sandpolis.core.clientserver.Messages.RQ_DeleteListener;
+import com.sandpolis.core.clientserver.Messages.RS_CreateListener;
+import com.sandpolis.core.clientserver.Messages.RS_DeleteListener;
 import com.sandpolis.core.instance.Listener.ListenerConfig;
 import com.sandpolis.core.net.cmdlet.Cmdlet;
 
