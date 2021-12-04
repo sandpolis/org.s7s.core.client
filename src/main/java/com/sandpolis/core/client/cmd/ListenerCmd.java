@@ -16,7 +16,7 @@ import com.sandpolis.core.clientserver.Messages.RQ_DeleteListener;
 import com.sandpolis.core.clientserver.Messages.RS_CreateListener;
 import com.sandpolis.core.clientserver.Messages.RS_DeleteListener;
 import com.sandpolis.core.instance.Listener.ListenerConfig;
-import com.sandpolis.core.net.cmdlet.Cmdlet;
+import com.sandpolis.core.instance.cmdlet.Cmdlet;
 
 /**
  * An API for interacting with listeners on the server.

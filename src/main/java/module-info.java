@@ -15,5 +15,4 @@ module com.sandpolis.core.client {
 	requires com.sandpolis.core.clientserver;
 	requires com.sandpolis.core.foundation;
 	requires com.sandpolis.core.instance;
-	requires com.sandpolis.core.net;
 }

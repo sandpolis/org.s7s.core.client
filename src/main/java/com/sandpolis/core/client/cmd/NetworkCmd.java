@@ -9,7 +9,7 @@
 //============================================================================//
 package com.sandpolis.core.client.cmd;
 
-import com.sandpolis.core.net.cmdlet.Cmdlet;
+import com.sandpolis.core.instance.cmdlet.Cmdlet;
 
 /**
  * Contains network commands.

@@ -24,7 +24,7 @@ import com.sandpolis.core.clientserver.Messages.RQ_DeleteGroup;
 import com.sandpolis.core.clientserver.Messages.RS_CreateGroup;
 import com.sandpolis.core.clientserver.Messages.RS_DeleteGroup;
 import com.sandpolis.core.instance.Group.GroupConfig;
-import com.sandpolis.core.net.cmdlet.Cmdlet;
+import com.sandpolis.core.instance.cmdlet.Cmdlet;
 
 /**
  * An API for interacting with authentication groups on the server.
