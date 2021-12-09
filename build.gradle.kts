@@ -24,8 +24,8 @@ dependencies {
 		api("com.sandpolis:core.clientserver:+")
 		implementation("com.sandpolis:core.instance:+")
 	} else {
-		api(project(":module:com.sandpolis.core.clientagent"))
-		api(project(":module:com.sandpolis.core.clientserver"))
-		implementation(project(":module:com.sandpolis.core.instance"))
+		api(project(":core:com.sandpolis.core.clientagent"))
+		api(project(":core:com.sandpolis.core.clientserver"))
+		implementation(project(":core:com.sandpolis.core.instance"))
 	}
 }
