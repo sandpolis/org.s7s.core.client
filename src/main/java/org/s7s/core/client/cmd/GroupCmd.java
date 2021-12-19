@@ -1,13 +1,12 @@
 //============================================================================//
 //                                                                            //
-//                         Copyright © 2015 Sandpolis                         //
+//            Copyright © 2015 - 2022 Sandpolis Software Foundation           //
 //                                                                            //
 //  This source file is subject to the terms of the Mozilla Public License    //
-//  version 2. You may not use this file except in compliance with the MPL    //
-//  as published by the Mozilla Foundation.                                   //
+//  version 2. You may not use this file except in compliance with the MPLv2. //
 //                                                                            //
 //============================================================================//
-package com.sandpolis.core.client.cmd;
+package org.s7s.core.client.cmd;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,12 +18,12 @@ import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
 import javax.crypto.KeyGenerator;
 
-import com.sandpolis.core.clientserver.Messages.RQ_CreateGroup;
-import com.sandpolis.core.clientserver.Messages.RQ_DeleteGroup;
-import com.sandpolis.core.clientserver.Messages.RS_CreateGroup;
-import com.sandpolis.core.clientserver.Messages.RS_DeleteGroup;
-import com.sandpolis.core.instance.Group.GroupConfig;
-import com.sandpolis.core.instance.cmdlet.Cmdlet;
+import org.s7s.core.clientserver.Messages.RQ_CreateGroup;
+import org.s7s.core.clientserver.Messages.RQ_DeleteGroup;
+import org.s7s.core.clientserver.Messages.RS_CreateGroup;
+import org.s7s.core.clientserver.Messages.RS_DeleteGroup;
+import org.s7s.core.instance.Group.GroupConfig;
+import org.s7s.core.instance.cmdlet.Cmdlet;
 
 /**
  * An API for interacting with authentication groups on the server.
