@@ -18,11 +18,10 @@ import javax.crypto.Cipher;
 import javax.crypto.CipherInputStream;
 import javax.crypto.KeyGenerator;
 
-import org.s7s.core.clientserver.Messages.RQ_CreateGroup;
-import org.s7s.core.clientserver.Messages.RQ_DeleteGroup;
-import org.s7s.core.clientserver.Messages.RS_CreateGroup;
-import org.s7s.core.clientserver.Messages.RS_DeleteGroup;
-import org.s7s.core.instance.Group.GroupConfig;
+import org.s7s.core.protocol.Group.RQ_CreateGroup;
+import org.s7s.core.protocol.Group.RQ_DeleteGroup;
+import org.s7s.core.protocol.Group.RS_CreateGroup;
+import org.s7s.core.protocol.Group.RS_DeleteGroup;
 import org.s7s.core.instance.cmdlet.Cmdlet;
 
 /**
@@ -39,7 +38,7 @@ public final class GroupCmd extends Cmdlet<GroupCmd> {
 	 * @param name The group name
 	 * @return An asynchronous {@link CompletionStage}
 	 */
-	public CompletionStage<RS_CreateGroup> create(GroupConfig config) {
+	public CompletionStage<RS_CreateGroup> create() {
 		return request(RS_CreateGroup.class, RQ_CreateGroup.newBuilder());
 	}
 
@@ -66,7 +65,7 @@ public final class GroupCmd extends Cmdlet<GroupCmd> {
 		cipher.init(Cipher.DECRYPT_MODE, keyGen.generateKey());
 
 		try (InputStream in = new CipherInputStream(new FileInputStream(group), cipher)) {
-			GroupConfig container = GroupConfig.parseDelimitedFrom(in);
+			//GroupConfig container = GroupConfig.parseDelimitedFrom(in);
 		}
 
 		// TODO

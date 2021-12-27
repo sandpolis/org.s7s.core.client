@@ -11,7 +11,6 @@ module org.s7s.core.client {
 
 	requires com.google.common;
 	requires com.google.protobuf;
-	requires org.s7s.core.clientserver;
 	requires org.s7s.core.foundation;
 	requires org.s7s.core.instance;
 }

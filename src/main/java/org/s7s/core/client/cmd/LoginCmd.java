@@ -14,8 +14,8 @@ import java.util.Objects;
 import java.util.concurrent.CompletionStage;
 
 import com.google.common.base.Charsets;
-import org.s7s.core.clientserver.Messages.RQ_Login;
-import org.s7s.core.clientserver.Messages.RS_Login;
+import org.s7s.core.protocol.Session.RQ_Login;
+import org.s7s.core.protocol.Session.RS_Login;
 import org.s7s.core.instance.cmdlet.Cmdlet;
 
 /**

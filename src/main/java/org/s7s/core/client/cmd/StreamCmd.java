@@ -11,8 +11,8 @@ package org.s7s.core.client.cmd;
 import java.util.concurrent.CompletionStage;
 
 import org.s7s.core.instance.cmdlet.Cmdlet;
-import org.s7s.core.instance.Messages.RQ_StopStream;
-import org.s7s.core.instance.Messages.RS_StopStream;
+import org.s7s.core.protocol.Stream.RQ_StopStream;
+import org.s7s.core.protocol.Stream.RS_StopStream;
 
 /**
  * An API for interacting with streams on the server.

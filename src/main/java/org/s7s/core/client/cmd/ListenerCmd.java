@@ -10,11 +10,10 @@ package org.s7s.core.client.cmd;
 
 import java.util.concurrent.CompletionStage;
 
-import org.s7s.core.clientserver.Messages.RQ_CreateListener;
-import org.s7s.core.clientserver.Messages.RQ_DeleteListener;
-import org.s7s.core.clientserver.Messages.RS_CreateListener;
-import org.s7s.core.clientserver.Messages.RS_DeleteListener;
-import org.s7s.core.instance.Listener.ListenerConfig;
+import org.s7s.core.protocol.Listener.RQ_CreateListener;
+import org.s7s.core.protocol.Listener.RQ_DeleteListener;
+import org.s7s.core.protocol.Listener.RS_CreateListener;
+import org.s7s.core.protocol.Listener.RS_DeleteListener;
 import org.s7s.core.instance.cmdlet.Cmdlet;
 
 /**
@@ -31,7 +30,7 @@ public final class ListenerCmd extends Cmdlet<ListenerCmd> {
 	 * @param config The listener configuration
 	 * @return An asynchronous {@link CompletionStage}
 	 */
-	public CompletionStage<RS_CreateListener> create(ListenerConfig config) {
+	public CompletionStage<RS_CreateListener> create() {
 		return request(RS_CreateListener.class, RQ_CreateListener.newBuilder());
 	}
 

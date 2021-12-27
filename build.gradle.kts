@@ -19,12 +19,8 @@ dependencies {
 	testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.+")
 
 	if (project.getParent() == null) {
-		api("org.s7s:core.clientagent:+")
-		api("org.s7s:core.clientserver:+")
-		implementation("org.s7s:core.instance:+")
+		api("org.s7s:core.instance:+")
 	} else {
-		api(project(":core:org.s7s.core.clientagent"))
-		api(project(":core:org.s7s.core.clientserver"))
-		implementation(project(":core:org.s7s.core.instance"))
+		api(project(":core:org.s7s.core.instance"))
 	}
 }

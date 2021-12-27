@@ -13,11 +13,11 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
-import org.s7s.core.instance.Messages.RQ_Ping;
-import org.s7s.core.instance.Messages.RS_Ping;
+import org.s7s.core.protocol.Network.RQ_Ping;
+import org.s7s.core.protocol.Network.RS_Ping;
 import org.s7s.core.instance.cmdlet.Cmdlet;
-import org.s7s.core.clientserver.Messages.RQ_ServerBanner;
-import org.s7s.core.clientserver.Messages.RS_ServerBanner;
+import org.s7s.core.protocol.Server.RQ_ServerBanner;
+import org.s7s.core.protocol.Server.RS_ServerBanner;
 
 /**
  * Contains server commands.
